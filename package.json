@@ -59,7 +59,7 @@
 			  }]
 		  }, 
 		  "win": {
-			  "icon": "./dist/electron/static/icons/icon.ico",
+			  "icon": "./dist/electron/static/icons/icon.png",
 			  "artifactName": "${productName}_setup_${version}.${ext}",
 			  "extraResources": [{
 				  "from": "./files/default",
