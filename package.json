@@ -9,7 +9,7 @@
   "panel": "v2board",
   "productName": "爱快VPN",
   "scripts": {
-	  "build:mac": "electron-builder --mac",
+	  "build:mac": "electron-builder --mac --ia32",
 	  "build:win": "electron-builder --win"
 	},
   
@@ -41,7 +41,13 @@
 		  "mac": {
 			  "icon": "./dist/electron/static/icons/icon.png",
 			  "artifactName": "${productName}_setup_${version}.${ext}",
-			  "target": "dmg",
+			  "target": [
+      "dmg",
+      "zip"
+    ],
+    "arch": [
+      "ia32"
+    ],
 			  "mergeASARs": true,
 			  "extraResources": [{
 				  "from": "./files/default",
