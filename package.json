@@ -44,8 +44,8 @@
 			  "target": "dmg",
 			  "mergeASARs": true,
 			  "extraResources": [{
-				  "from": "./files/default/macuniversal",
-				  "to": "static/files/default/universal"
+				 	  "from": "./files/default",
+				  "to": "static/files/default"
 			  }, {
 				  "from": "./dist/electron/static/flags",
 				  "to": "static/flags"
@@ -53,13 +53,13 @@
 				  "from": "./dist/electron/static/index",
 				  "to": "static/index"
 			  }, {
-				  "from": "./files/darwin/winuniversal",
-				  "to": "static/files/darwin/universal"
+				  "from": "./files/darwin",
+				  "to": "static/files/darwin"
 				  
 			  }]
 		  }, 
 		  "win": {
-			  "icon": "./dist/electron/static/icons/icon.png",
+			  "icon": "./dist/electron/static/icons/icon.ico",
 			  "artifactName": "${productName}_setup_${version}.${ext}",
 			  "extraResources": [{
 				  "from": "./files/default",
