@@ -5,7 +5,7 @@
   "description": "Xanadu Client",
   "license": "MIT",
   "main": "./dist/electron/main.js",
-  "grant_code": "K2m0lWytfBhcUzIgxhpeKM79jLE35OiY+wbmhwTMJJE=",
+  "grant_code": "gI1saIAhJxeM3tncnRHj/VKkXKskgE3QpAG7B0Yat8I=",
   "panel": "v2board",
   "productName": "小鸟云",
   "scripts": {
