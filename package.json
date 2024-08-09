@@ -1,8 +1,8 @@
 {
-  "name": "xanadu",
+  "name": "ikuaiVPN",
   "version": "4.1.8",
-  "author": "xanadu.pro",
-  "description": "Xanadu Client",
+  "author": "ikuaiVPN.pro",
+  "description": "ikuaiVPN Client",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "grant_code": "gI1saIAhJxeM3tncnRHj/VKkXKskgE3QpAG7B0Yat8I=",
@@ -15,7 +15,7 @@
   
 	"build": {
 		  "productName": "爱快VPN",
-		  "appId": "com.xanadu.pro",
+		  "appId": "com.ikuaiVPN.pro",
 		  "nsis": {
 			  "oneClick": false,
 			  "allowToChangeInstallationDirectory": true,
@@ -44,8 +44,8 @@
 			  "target": "dmg",
 			  "mergeASARs": true,
 			  "extraResources": [{
-				  "from": "./files/default",
-				  "to": "static/files/default"
+				  "from": "./files/default/macuniversal",
+				  "to": "static/files/default/universal"
 			  }, {
 				  "from": "./dist/electron/static/flags",
 				  "to": "static/flags"
@@ -53,13 +53,13 @@
 				  "from": "./dist/electron/static/index",
 				  "to": "static/index"
 			  }, {
-				  "from": "./files/darwin",
-				  "to": "static/files/darwin"
+				  "from": "./files/darwin/winuniversal",
+				  "to": "static/files/darwin/universal"
 				  
 			  }]
 		  }, 
 		  "win": {
-			  "icon": "./dist/electron/static/icons/icon.ico",
+			  "icon": "./dist/electron/static/icons/icon.png",
 			  "artifactName": "${productName}_setup_${version}.${ext}",
 			  "extraResources": [{
 				  "from": "./files/default",
