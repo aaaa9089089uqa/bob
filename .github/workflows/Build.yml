@@ -1,0 +1,63 @@
+name: 打包
+on: [push]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+jobs:
+  run_python_script:
+    name: 打包
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest,windows-latest]
+
+    steps:
+      - name: Check out git repository
+        uses: actions/checkout@v4
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      
+      - name: Install dependencies
+        run: |
+          npm i -g pnpm
+
+      - name: Run Python script
+
+        run: |
+           pnpm i
+      - name: Build Electron App for windows
+        if: matrix.os == 'windows-latest'
+        run: pnpm run build:win 
+  
+      - name: Build Electron App for macos
+        if: matrix.os == 'macos-latest'
+        run: |
+             pnpm run build:mac
+      - name: Compress DMG Files
+        if: matrix.os == 'macos-latest'
+        run: |
+          # 查找所有 .dmg 文件并压缩
+          find ./build -name "*.dmg" -print0 | while IFS= read -r -d '' file; do
+            zip "${file}.zip" "$file"
+          done
+
+      - name: Compress EXE Files
+        if: matrix.os == 'windows-latest'
+        run: |
+          # 查找所有 .exe 文件并压缩
+          $files = Get-ChildItem -Path .\build -Filter *.exe
+          foreach ($file in $files) {
+              Compress-Archive -Path $file.FullName -DestinationPath "$($file.FullName).zip"
+          }
+        
+
+      - name: Upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: xanadu  # 替换为你的软件包名称
+          path: build  # 替换为你的软件包所在的目录名
