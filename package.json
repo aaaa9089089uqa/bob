@@ -1,21 +1,21 @@
 {
-  "name": "ikuaiVPN",
+  "name": "tizhimao",
   "version": "4.1.8",
-  "author": "ikuaiVPN.pro",
-  "description": "ikuaiVPN Client",
+  "author": "tizhimao.pro",
+  "description": "tizhimao Client",
   "license": "MIT",
   "main": "./dist/electron/main.js",
-  "grant_code": "gI1saIAhJxeM3tncnRHj/VKkXKskgE3QpAG7B0Yat8I=",
+  "grant_code": "1KArXivz7NDuSEPyYEJ3EcbB1971VnMeAAY1SwV/vuM=",
   "panel": "v2board",
-  "productName": "爱快VPN",
+  "productName": "梯子猫",
   "scripts": {
 	  "build:mac": "electron-builder --mac --x64",
 	  "build:win": "electron-builder --win"
 	},
   
 	"build": {
-		  "productName": "爱快VPN",
-		  "appId": "com.ikuaiVPN.pro",
+		  "productName": "梯子猫",
+		  "appId": "com.tizhimao.pro",
 		  "nsis": {
 			  "oneClick": false,
 			  "allowToChangeInstallationDirectory": true,
