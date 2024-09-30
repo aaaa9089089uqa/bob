@@ -57,7 +57,10 @@ jobs:
         
 
       - name: Upload package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: xanadu  # 替换为你的软件包名称
-          path: build  # 替换为你的软件包所在的目录名
+          path: |
+            build/*.exe
+            build/*.dmg  
+            
